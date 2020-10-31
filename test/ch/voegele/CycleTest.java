@@ -167,17 +167,20 @@ class CycleTest {
 
         for (int i = 0; i < size - 1; i++) {
             graph.addDirectedEdge(i, i + 1);
-            if (i % 2 == 0)
-                graph.addDirectedEdge(i + 2, i);
+//            if (i % 2 == 0)
+//                graph.addDirectedEdge(i + 2, i);
 
         }
         graph.addDirectedEdge(size - 1, 0);
         graph.addDirectedEdge(0, size - 2);
 
-        var results = graph.findAllCycles();
-        for (var result : results) {
-            result.printPath();
-        }
+        var results = graph.findCycle(0);
+
+        results.printPath();
+
+//        for (var result : results) {
+//            result.printPath();
+//        }
 
 //        assertEquals(1000, result.lambda);
 //        assertTrue(result.isCyclic);
